@@ -1,0 +1,36 @@
+﻿@model Dictionary<string,string>
+
+@{
+	ViewBag.Title = "Userslist";
+}
+
+
+	@Html.AntiForgeryToken()
+
+	<div class="form-horizontal">
+		<hr />
+		<table>
+			@{
+				<tr>
+					<td>
+						UserName
+					</td>
+					<td>
+						ArtistName
+					</td>
+				</tr>
+				foreach (var str in Model)
+				{
+					<tr>
+						<td>@str.Key</td>
+						<td>@str.Value</td>
+					</tr>
+				}
+			}
+		</table>
+
+	</div>
+
+@section Scripts {
+	@Scripts.Render("~/bundles/jqueryval")
+}

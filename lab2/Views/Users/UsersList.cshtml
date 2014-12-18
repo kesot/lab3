@@ -1,0 +1,24 @@
+﻿@model List<string>
+
+@{
+	ViewBag.Title = "Userslist";
+}
+
+
+	@Html.AntiForgeryToken()
+
+	<div class="form-horizontal">
+		<h4>UserName</h4>
+		<hr />
+		@{
+			foreach (var str in Model)
+			{
+				<p>@str</p>
+			}
+		}
+
+	</div>
+
+@section Scripts {
+	@Scripts.Render("~/bundles/jqueryval")
+}
